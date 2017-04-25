@@ -28,8 +28,8 @@ window.addEventListener('load', function() {
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     
     var fluid = new FluidSolver(cellCount[0], cellCount[1], 0.00001);
-    fluid.add_flow(0.47, 0.53, 0.0, 0.01, 1.0, 0, 1, 0)
-    fluid.add_flow(0, 0.01, 0.45, 0.55, 0.8, 0.8, 0, 0)
+    fluid.add_flow(0.47, 0.53, 0.0, 0.01, 1.0, 0, 0.8)
+    fluid.add_flow(0.35, 0.65, 0.8, 0.99, 0.4, 0.0, -0.1)
     fluid.update(0.05)
 
     var dataTex = new THREE.DataTexture(fluid.denseUI8, cellCount[0], cellCount[1], THREE.LuminanceFormat, THREE.UnsignedByteType);
@@ -80,8 +80,8 @@ window.addEventListener('load', function() {
         stats.begin();
 
         t1 = Date.now()
-        fluid.add_flow(0.47, 0.53, 0.0, 0.01, 1.0, 0, 1, 0)
-        fluid.add_flow(0, 0.01, 0.45, 0.55, 0.8, 0.8, 0, 0)
+        fluid.add_flow(0.47, 0.53, 0.0, 0.01, 1.0, 0, 0.8)
+        fluid.add_flow(0.35, 0.65, 0.8, 0.99, 0.4, 0.0, -0.1)
         fluid.update(0.05)
         dataTex.needsUpdate = true;
 
